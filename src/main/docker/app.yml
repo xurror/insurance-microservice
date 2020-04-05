@@ -1,0 +1,14 @@
+version: '2'
+services:
+  insurancemodule-app:
+    image: insurancemodule
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://insurancemodule-mysql:3306/insurancemodule?useUnicode=true&characterEncoding=utf8&useSSL=false&createDatabaseIfNotExist=true
+      - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
+  insurancemodule-mysql:
+    extends:
+      file: mysql.yml
+      service: insurancemodule-mysql
