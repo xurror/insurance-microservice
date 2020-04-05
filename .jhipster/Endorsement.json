@@ -1,0 +1,40 @@
+{
+    "name": "Endorsement",
+    "fields": [
+        {
+            "fieldName": "ref",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "policy",
+            "otherEntityRelationshipName": "endorsement",
+            "relationshipName": "policy",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200405135800",
+    "entityTableName": "endorsement",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "InsuranceModule",
+    "applications": "*",
+    "microserviceName": "InsuranceModule"
+}

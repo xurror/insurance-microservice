@@ -1,0 +1,40 @@
+{
+    "name": "MTA",
+    "fields": [
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "policy",
+            "otherEntityRelationshipName": "mTA",
+            "relationshipName": "policy",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200405135500",
+    "entityTableName": "mta",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "InsuranceModule",
+    "applications": "*",
+    "microserviceName": "InsuranceModule"
+}

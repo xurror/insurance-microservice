@@ -1,0 +1,11 @@
+id;date;amount;claim_status;claim_outcomes
+1;2020-04-04;Chief violet;Claimed;Rejected
+2;2020-04-04;Computer reboot Interactions;UnClaimed;Rejected
+3;2020-04-05;Facilitator Configuration;UnderReview;Rejected
+4;2020-04-04;Group Operations;UnClaimed;Rejected
+5;2020-04-05;Practical Falls;Claimed;Settled
+6;2020-04-05;e-commerce Orchestrator Factors;Claimed;Settled
+7;2020-04-05;synergistic Tactics;UnClaimed;Settled
+8;2020-04-05;world-class Identity;UnClaimed;Settled
+9;2020-04-04;Planner;UnClaimed;Settled
+10;2020-04-04;Sausages;UnderReview;Rejected

@@ -1,0 +1,50 @@
+{
+    "name": "Claim",
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "claimStatus",
+            "fieldType": "ClaimStatus",
+            "fieldValues": "UnderReview,Claimed,UnClaimed"
+        },
+        {
+            "fieldName": "claimOutcomes",
+            "fieldType": "ClaimOutcomes",
+            "fieldValues": "Settled,Rejected"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "customer",
+            "otherEntityRelationshipName": "claim",
+            "relationshipName": "customer",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200405135200",
+    "entityTableName": "claim",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "InsuranceModule",
+    "applications": "*",
+    "microserviceName": "InsuranceModule"
+}

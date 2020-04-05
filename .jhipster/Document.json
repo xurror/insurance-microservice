@@ -1,0 +1,33 @@
+{
+    "name": "Document",
+    "fields": [
+        {
+            "fieldName": "ref",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "policy",
+            "otherEntityRelationshipName": "document",
+            "relationshipName": "policy",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200405135900",
+    "entityTableName": "document",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "InsuranceModule",
+    "applications": "*",
+    "microserviceName": "InsuranceModule"
+}

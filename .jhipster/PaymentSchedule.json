@@ -1,0 +1,40 @@
+{
+    "name": "PaymentSchedule",
+    "fields": [
+        {
+            "fieldName": "dueDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "policyHolder",
+            "otherEntityRelationshipName": "paymentSchedule",
+            "relationshipName": "policyHolder",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200405135300",
+    "entityTableName": "payment_schedule",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "InsuranceModule",
+    "applications": "*",
+    "microserviceName": "InsuranceModule"
+}
