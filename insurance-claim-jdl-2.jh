@@ -1,0 +1,123 @@
+entity Customer {
+	id Integer required unique,
+	firstName String required,
+    lastName String required,
+    dob LocalDate required,
+    email String required,
+    telephone String required,
+    SSN String required,    
+    isPrimaryPolicyHolder Boolean required,
+    gender String required,
+    maritalStatus MaritalStatus required,
+    isActive Boolean required,
+    timestamp LocalDate required
+}
+
+enum MaritalStatus {
+	Single, Married
+}
+
+entity Address {
+	id Integer required unique,
+	address String required,
+    address2 String required,
+    city String required,
+    state String required,
+    zip String required,
+    country String required
+}
+
+entity Claim {
+	id Integer required unique,
+	date LocalDate required,
+    amount String required
+    claimStatus ClaimStatus
+    claimOutcomes ClaimOutcomes
+}
+
+enum ClaimStatus {
+	UnderReview, Claimed, UnClaimed
+}
+
+enum ClaimOutcomes {
+    Settled, Rejected
+}
+
+entity PaymentSchedule {
+	id Integer required unique,
+	dueDate LocalDate required,
+    amount String required
+}
+
+entity Quote {
+	id Integer required unique,
+	ref String required,
+    startDate LocalDate required,
+    endDate LocalDate required,
+    premium Float required,
+    IPT String required
+}
+
+entity MTA {
+	id Integer required unique,
+	startDate LocalDate required,
+    endDate LocalDate required
+}
+
+entity Policy {
+	id Integer required unique,
+	startDate LocalDate required,
+    endDate LocalDate required,
+    premium Float required,
+    deductible Float required,
+    isActive Boolean required,
+    timestamp LocalDate required
+}
+
+entity Product {
+	id Integer required unique,
+	name String required,
+    code String required,
+    description String required,
+    category String required,
+    timestamp LocalDate required,
+    isActive Boolean required
+}
+
+entity Endorsement {
+	id Integer required unique,
+	ref String required,
+    description String required
+}
+
+entity Document {
+	id Integer required unique,
+	ref String required
+}
+
+entity PolicyHolder {
+	id Integer required unique
+}
+
+// Relationships
+relationship OneToOne {
+	Policy{quoteId} to Quote
+}
+
+relationship OneToMany {
+	Quote to Product
+    Customer to Address
+    Customer to PolicyHolder
+    Quote to PolicyHolder
+    PolicyHolder to PaymentSchedule
+    Customer to Claim
+    Policy to MTA
+    Policy to Endorsement
+    Policy to Document
+}
+
+
+
+
+
+
